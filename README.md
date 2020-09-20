@@ -1,1 +1,1 @@
-# bucket_fill
+# Simple recursive flood fill algorithm implementation
