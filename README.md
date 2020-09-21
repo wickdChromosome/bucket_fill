@@ -26,11 +26,12 @@ For example, using the test image, you can do:
 ```
 ./flood_fill_png test_img.png 60 70 255 255 255 255 0 255 255 150 example_out.png
 ```
-Which turns the test image:
+Which turns the test image from:
 <p align="center">
 <img width=250 src="test_img.png">
 </p>
 
+To:
 <p align="center">
 <img width=250 src="example_out.png">
 </p>
