@@ -145,18 +145,19 @@ void flood_fill(int node_x, int node_y, int R_val, int G_val, int B_val, int A_v
 	if (node_y >= height || node_y < 0) return;
 	if (node_x >= width || node_x < 0) return;
 
-
 	png_byte* node_row = row_pointers[node_y];
 	png_byte* node_ptr = &(node_row[node_x*4]);
-	
-	// 1. If target-color is equal to replacement-color, return.
-	if (node_ptr[0] == R_target && node_ptr[1] == G_target && node_ptr[2] == B_target && node_ptr[3] == A_target){
+
+
+
+	// 1. If replacement color is equal to current pixel color, return.
+	if (((node_ptr[0] == R_target) && (node_ptr[1] == G_target)) && ((node_ptr[2] == B_target) && (node_ptr[3] == A_target))){
 		
 		return;
 	
 	
-	// 2. ElseIf the color of node is not equal to target-color, return.
-	} else if(node_ptr[0] != R_val && node_ptr[1] != G_val && node_ptr[2] != B_val && node_ptr[3] != A_val){
+	// 2. ElseIf the color of the pixel(node) is not equal to target-color, return.
+	} else if(((node_ptr[0] != R_val) || (node_ptr[1] != G_val)) || ((node_ptr[2] != B_val) || (node_ptr[3] != A_val))){
 
 		return;	
 	
@@ -169,8 +170,8 @@ void flood_fill(int node_x, int node_y, int R_val, int G_val, int B_val, int A_v
 		node_ptr[2] = B_target;			
 		node_ptr[3] = A_target;			
 	
-		puts("Replaced coords");	
 	
+		//printf("X:%i Y:%i\n replaced", node_x,node_y);
 	}
 	
 	/*
@@ -184,7 +185,6 @@ void flood_fill(int node_x, int node_y, int R_val, int G_val, int B_val, int A_v
 	flood_fill(node_x,node_y-1,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //South
 	flood_fill(node_x-1,node_y,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //West
 	flood_fill(node_x+1,node_y,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //East
-
 
 	return;	
 	
@@ -223,6 +223,7 @@ int main(int argc, char **argv)
 	}
         read_png_file(argv[1]);
         process_file(atoi(argv[2]),atoi(argv[3]),atoi(argv[4]),atoi(argv[5]),atoi(argv[6]),atoi(argv[7]),atoi(argv[8]),atoi(argv[9]),atoi(argv[10]),atoi(argv[11]));
+	puts("Writing png..");
         write_png_file(argv[12]);
 
         return 0;
