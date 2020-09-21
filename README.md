@@ -25,16 +25,16 @@ it is only feasible for usage with smaller images. After compilation, using an i
 flood_fill_png <png_in> <x_root> <y_root> <R> <G> <B> <A> <R_target> <G_target> <B_target> <A_target> <png_out>
 ```
 Where:
- - <png_in> : Input png image
- - <x_root> : X coordinate to start filling from
- - <y_root> : Y coordinate to start filling from
- - <R> : Red value of target color to replace
- - <G> : Green value of target color to replace
- - <B> : Blue value of target color to replace
- - <A> : Transparency value of target color to replace
- - <R_target> : Red value to replace target color with
- - <G_target> : Green value to replace target color with
- - <B_target> : Blue value to replace target color with
- - <A_target> : Transparency value to replace target color with
- - <png_out> : Output file name
+ - png_in : Input png image
+ - x_root : X coordinate to start filling from
+ - y_root : Y coordinate to start filling from
+ - R : Red value of target color to replace
+ - G : Green value of target color to replace
+ - B : Blue value of target color to replace
+ - A : Transparency value of target color to replace
+ - R_target : Red value to replace target color with
+ - G_target : Green value to replace target color with
+ - B_target : Blue value to replace target color with
+ - A_target : Transparency value to replace target color with
+ - png_out : Output file name
 
