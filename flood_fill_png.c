@@ -170,8 +170,6 @@ void flood_fill(int node_x, int node_y, int R_val, int G_val, int B_val, int A_v
 		node_ptr[2] = B_target;			
 		node_ptr[3] = A_target;			
 	
-	
-		//printf("X:%i Y:%i\n replaced", node_x,node_y);
 	}
 	
 	/*
@@ -180,9 +178,8 @@ void flood_fill(int node_x, int node_y, int R_val, int G_val, int B_val, int A_v
 	      Perform Flood-fill (one step to the west of node, target-color, replacement-color).
 	      Perform Flood-fill (one step to the east of node, target-color, replacement-color).
 	*/
-
-	flood_fill(node_x,node_y+1,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //North
 	flood_fill(node_x,node_y-1,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //South
+	flood_fill(node_x,node_y+1,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //North
 	flood_fill(node_x-1,node_y,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //West
 	flood_fill(node_x+1,node_y,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); //East
 
@@ -206,8 +203,7 @@ void process_file(int x_root, int y_root, int R_val, int G_val, int B_val, int A
 	puts("Starting fill");
 	//start iterating from the root node
 	flood_fill(x_root,y_root,R_val,G_val,B_val,A_val,R_target,G_target,B_target,A_target); 
-
-	puts("Done");
+	puts("Done with fill");
 	
 
 }
@@ -225,6 +221,7 @@ int main(int argc, char **argv)
         process_file(atoi(argv[2]),atoi(argv[3]),atoi(argv[4]),atoi(argv[5]),atoi(argv[6]),atoi(argv[7]),atoi(argv[8]),atoi(argv[9]),atoi(argv[10]),atoi(argv[11]));
 	puts("Writing png..");
         write_png_file(argv[12]);
+	puts("Done");
 
         return 0;
 }
