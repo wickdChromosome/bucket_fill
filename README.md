@@ -1,3 +1,3 @@
 # Simple recursive flood fill algorithm implementation
 
-<img src="optimized_example.gif">
+<img width=600 src="optimized_example.gif">
