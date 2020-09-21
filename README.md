@@ -1,3 +1,5 @@
 # Simple recursive flood fill algorithm implementation
 
-<img width=400 align=center src="optimized_example.gif">
+<div style="align:center">
+<img width=400 src="optimized_example.gif">
+</div>
